@@ -49,10 +49,6 @@ class LoanApplication(BaseModel): # Pydantic Model(Validation)
     cb_person_default_on_file: str
     cb_person_cred_hist_length: int
 
-@app.get("/")
-def greet():
-    return {"message": "Hello, World!"}
-
 @app.post("/predict")
 def predict(data: LoanApplication):
     input_df = pd.DataFrame([data.dict()])
